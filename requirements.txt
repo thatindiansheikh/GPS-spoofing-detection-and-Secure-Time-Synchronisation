@@ -1,0 +1,26 @@
+# Versions are lower bounds; the project was last tested with the versions
+# noted alongside.
+
+# Core
+pynmea2>=1.19        # NMEA sentence parsing                  (tested 1.19.0)
+numpy>=2.0           #                                        (tested 2.5.3)
+pandas>=2.2          #                                        (tested 3.0.6)
+pyarrow>=15          # parquet storage for epochs and results (tested 25.0.1)
+
+# Reference time. No chrony on Windows, so NTP is queried directly.
+ntplib>=0.4          #                                        (tested 0.4.0)
+
+# Data download (scripts/fetch_data.py)
+requests>=2.31       #                                        (tested 2.34.2)
+
+# Report figures (scripts/make_figures.py)
+matplotlib>=3.8      #                                        (tested 3.11.2)
+
+# Monitoring console. The console relies on timed fragments
+# (st.fragment(run_every=...)), app-scoped reruns and width="stretch" on
+# widgets, so an older Streamlit will not run it.
+streamlit>=1.50      #                                        (tested 1.64.0)
+plotly>=6.0          # map, sky view and time-series panels   (tested 7.1.0)
+
+# Tests
+pytest>=8            #                                        (tested 9.1.1)
